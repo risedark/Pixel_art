@@ -1,0 +1,157 @@
+html {
+  --text: black;
+  --secondaryText: white;
+  --markup-color: rgba(51, 51, 51, 1);
+  box-sizing: border-box;
+  --mainFont: freePixel;
+  --secondaryFont: retroGaming;
+}
+header {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--secondaryFont);
+}
+.controller {
+  max-width: 250px;
+  aspect-ratio: 2/3;
+}
+.logo {
+  max-width: 300px;
+}
+.headerGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+.midSection {
+  font-family: var(--mainFont);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.sourceGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.sourceGrid img {
+  width: auto;
+  height: 3rem;
+
+  object-fit: contain;
+  padding: 2rem;
+  margin: 1rem;
+}
+.counter {
+  align-self: flex-start;
+  font-family: var(--secondaryFont);
+  font-size: xx-large;
+  margin-left: 2rem;
+  padding: 1rem;
+}
+.markupBox {
+  background-color: var(--text);
+  color: var(--secondaryText);
+}
+.news-section {
+  display: flex;
+  flex-flow: column wrap;
+  font-family: var(--mainFont);
+  padding: 1rem;
+}
+.News {
+  border: solid 0.5rem var(--text);
+  padding: 1rem;
+  margin: 1rem;
+  margin-left: 2rem;
+  display: grid;
+  width: 90%;
+  /* height: 250px; */
+  grid-template-areas:
+    "img logo time"
+    "img article article"
+    "img author button";
+  grid-template-columns: 400px 1fr 200px;
+  grid-template-rows: 3rem 1fr 0.5fr;
+}
+.News .articlePhoto {
+  grid-area: img;
+  max-width: 320px;
+  aspect-ratio: 4/3;
+}
+.News .logo {
+  grid-area: logo;
+  max-width: 120px;
+}
+
+.News button {
+  grid-area: button;
+  background-color: var(--markup-color);
+  color: var(--secondaryText);
+  font-family: var(--mainFont);
+  font-weight: 800;
+  font-size: larger;
+}
+.News button:hover {
+  cursor: pointer;
+  box-shadow: inset 200px 0 0 0 gray;
+}
+.News .article {
+  grid-area: article;
+  font-size: x-large;
+  font-weight: 600;
+}
+.News .author {
+  grid-area: author;
+}
+.News time {
+  grid-area: time;
+}
+.end {
+  font-family: var(--mainFont);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.end img {
+  max-width: 100px;
+  aspect-ratio: 4/3;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  10% {
+    transform: scale(1.1);
+  }
+}
+
+.devInf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--mainFont);
+}
+
+.devInf img {
+  border: 5px solid transparent;
+}
+
+.devInf img:hover {
+  border-color: gray;
+}
+@media (max-width: 850px) {
+  .News {
+    grid-template-areas:
+      "img img img"
+      "logo logo time"
+      "article author button" !important;
+  }
+  .News .articlePhoto {
+    max-width: 500px;
+    aspect-ratio: 16/5;
+  }
+}
